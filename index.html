@@ -34,13 +34,14 @@ h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1.5px;text-transform:uppercase
 .product{min-width:0}
 .photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden;cursor:zoom-in;touch-action:pan-y}
 .slider{display:flex;height:100%;transition:transform .3s ease}
-.slider img{min-width:100%;width:100%;height:100%;object-fit:cover;user-select:none}
-.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#0009;color:#fff;border:0;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:2}
+.slider img{min-width:100%;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#000b;color:#fff;border:1px solid #ffffff44;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;z-index:3}
 .slide-arrow.prev{left:8px}.slide-arrow.next{right:8px}
-.dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:2;background:#0007;padding:4px 7px;border-radius:10px}
+.dots{position:absolute;bottom:10px;left:12px;display:flex;gap:5px;z-index:3;background:#0008;padding:4px 7px;border-radius:10px}
 .dot{width:6px;height:6px;border-radius:50%;background:#ffffff66;transition:background .2s}
 .dot.active{background:#fff}
-.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:bold;z-index:2}
+.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:bold;z-index:3}
+.zoom-btn{position:absolute;bottom:10px;right:10px;background:#000b;color:#fff;border:1px solid #ffffff55;padding:4px 8px;font-size:9px;letter-spacing:1px;border-radius:4px;cursor:pointer;z-index:3}
 .info{padding:13px 0}.name{font-size:13px;letter-spacing:.3px;font-weight:bold}.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;color:#ccc;font-size:12px}
 .mrp{text-decoration:line-through;color:#888;font-size:11px;margin-right:5px;font-weight:normal}
 .size-row{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;color:#bbb}.size{flex:1;background:#151515;border:1px solid #444;color:white;padding:8px}
@@ -54,10 +55,10 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 .lightbox{display:none;position:fixed;inset:0;background:#000f;z-index:50;align-items:center;justify-content:center;flex-direction:column;padding:20px;touch-action:pan-y}
 .lightbox-img-wrap{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:750px;height:75vh}
 .lightbox img{max-width:92%;max-height:75vh;object-fit:contain;border:1px solid #333}
-.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#ffffff22;color:#fff;border:1px solid #ffffff55;width:40px;height:40px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#ffffff22;color:#fff;border:1px solid #ffffff55;width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
 .lb-arrow.prev{left:6px}.lb-arrow.next{right:6px}
 .lightbox-caption{margin-top:14px;font-size:14px;letter-spacing:1px;color:var(--cream);text-align:center}
-.lightbox-close{position:absolute;top:18px;right:24px;background:none;border:0;color:white;font-size:36px;cursor:pointer;line-height:1}
+.lightbox-close{position:absolute;top:18px;right:24px;background:none;border:0;color:white;font-size:38px;cursor:pointer;line-height:1;z-index:2}
 @media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 7%}.hero-image{min-height:350px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:250px}.category-card{height:230px}}
 @media(max-width:430px){.nav{padding:14px 5%}.brand{font-size:16px}.actions{gap:10px}.actions button{font-size:9px}.photo{height:210px}.category-card{height:190px}.category-card span{font-size:20px}}
 </style>
@@ -138,7 +139,8 @@ function goSlide(id, dir, e){
   });
 }
 
-function openZoom(id){
+function openZoom(id, e){
+  if(e) e.stopPropagation();
   lbProduct=products.find(x=>x.id===id);
   lbIndex=slideIndex[id]||0;
   updateLightbox();
@@ -169,11 +171,12 @@ function render(){
     const multi=p.images.length>1;
     const priceHtml=p.mrp?`<span class="mrp">${money(p.mrp)}</span><strong>${money(p.price)}</strong>`:`<strong>${money(p.price)}</strong>`;
     return `<article class="product">
-      <div class="photo" id="photo-${p.id}" onclick="openZoom(${p.id})">
+      <div class="photo" id="photo-${p.id}">
         <div class="slider" id="slider-${p.id}" style="transform:translateX(-${cur*100}%)">
           ${p.images.map(src=>`<img src="${src}" alt="${p.name}" loading="lazy">`).join("")}
         </div>
         <span class="tag">${p.tag}</span>
+        <button class="zoom-btn" onclick="openZoom(${p.id},event)">ZOOM</button>
         ${multi ? `<button class="slide-arrow prev" onclick="goSlide(${p.id},-1,event)">‹</button><button class="slide-arrow next" onclick="goSlide(${p.id},1,event)">›</button><div class="dots">${p.images.map((_,i)=>`<span class="dot ${i===cur?'active':''}" id="dot-${p.id}-${i}"></span>`).join("")}</div>` : ""}
       </div>
       <div class="info">
@@ -186,14 +189,21 @@ function render(){
   }).join(""):'<div class="empty">No matching products. Try another filter.</div>';
 
   list.forEach(p=>{
-    if(p.images.length<=1) return;
     const el=document.getElementById("photo-"+p.id);
-    let startX=0;
-    el.addEventListener("touchstart",e=>{startX=e.touches[0].clientX;},{passive:true});
+    let startX=0, moved=false;
+    el.addEventListener("touchstart",e=>{startX=e.touches[0].clientX; moved=false;},{passive:true});
+    el.addEventListener("touchmove",e=>{if(Math.abs(e.touches[0].clientX-startX)>12) moved=true;},{passive:true});
     el.addEventListener("touchend",e=>{
       const diff=e.changedTouches[0].clientX-startX;
-      if(Math.abs(diff)>35) goSlide(p.id, diff<0 ? 1 : -1);
+      if(Math.abs(diff)>35 && p.images.length>1){
+        goSlide(p.id, diff<0 ? 1 : -1);
+      } else if(!moved && !e.target.closest("button")){
+        openZoom(p.id);
+      }
     },{passive:true});
+    el.addEventListener("click",e=>{
+      if(!e.target.closest("button")) openZoom(p.id);
+    });
   });
 }
 
