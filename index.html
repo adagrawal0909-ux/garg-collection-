@@ -32,16 +32,16 @@ h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1.5px;text-transform:uppercase
 .search,.filter{background:#151515;border:1px solid #444;color:white;padding:13px 14px;outline:none}.search{flex:1;min-width:210px}.filter{min-width:165px}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .product{min-width:0}
-.photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden;cursor:zoom-in;touch-action:pan-y}
+.photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden;cursor:pointer}
 .slider{display:flex;height:100%;transition:transform .3s ease}
-.slider img{min-width:100%;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
-.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#000b;color:#fff;border:1px solid #ffffff44;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;z-index:3}
+.slider img{min-width:100%;width:100%;height:100%;object-fit:cover;user-select:none}
+.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#000c;color:#fff;border:1px solid #ffffff55;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;z-index:4}
 .slide-arrow.prev{left:8px}.slide-arrow.next{right:8px}
-.dots{position:absolute;bottom:10px;left:12px;display:flex;gap:5px;z-index:3;background:#0008;padding:4px 7px;border-radius:10px}
-.dot{width:6px;height:6px;border-radius:50%;background:#ffffff66;transition:background .2s}
+.dots{position:absolute;bottom:10px;left:12px;display:flex;gap:5px;z-index:4;background:#0008;padding:4px 7px;border-radius:10px}
+.dot{width:6px;height:6px;border-radius:50%;background:#ffffff66}
 .dot.active{background:#fff}
-.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:bold;z-index:3}
-.zoom-btn{position:absolute;bottom:10px;right:10px;background:#000b;color:#fff;border:1px solid #ffffff55;padding:4px 8px;font-size:9px;letter-spacing:1px;border-radius:4px;cursor:pointer;z-index:3}
+.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:bold;z-index:4}
+.zoom-btn{position:absolute;bottom:10px;right:10px;background:#000c;color:#fff;border:1px solid #ffffff66;padding:5px 9px;font-size:9px;letter-spacing:1px;border-radius:4px;cursor:pointer;z-index:4}
 .info{padding:13px 0}.name{font-size:13px;letter-spacing:.3px;font-weight:bold}.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;color:#ccc;font-size:12px}
 .mrp{text-decoration:line-through;color:#888;font-size:11px;margin-right:5px;font-weight:normal}
 .size-row{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;color:#bbb}.size{flex:1;background:#151515;border:1px solid #444;color:white;padding:8px}
@@ -52,13 +52,13 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 .cart-row{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid #333;font-size:13px}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{background:#333;color:white;border:0;padding:4px 9px}
 .total{display:flex;justify-content:space-between;padding:20px 0;font-weight:bold}.empty{text-align:center;padding:35px 0;color:#aaa}
 .wa-btn{width:100%;padding:14px;background:var(--green);color:#000;border:0;font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:12px;cursor:pointer;border-radius:3px}
-.lightbox{display:none;position:fixed;inset:0;background:#000f;z-index:50;align-items:center;justify-content:center;flex-direction:column;padding:20px;touch-action:pan-y}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;align-items:center;justify-content:center;flex-direction:column;padding:20px}
 .lightbox-img-wrap{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:750px;height:75vh}
-.lightbox img{max-width:92%;max-height:75vh;object-fit:contain;border:1px solid #333}
-.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#ffffff22;color:#fff;border:1px solid #ffffff55;width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.lightbox img{max-width:90%;max-height:75vh;object-fit:contain;border:1px solid #444}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#222;color:#fff;border:1px solid #666;width:44px;height:44px;border-radius:50%;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000}
 .lb-arrow.prev{left:6px}.lb-arrow.next{right:6px}
 .lightbox-caption{margin-top:14px;font-size:14px;letter-spacing:1px;color:var(--cream);text-align:center}
-.lightbox-close{position:absolute;top:18px;right:24px;background:none;border:0;color:white;font-size:38px;cursor:pointer;line-height:1;z-index:2}
+.lightbox-close{position:absolute;top:18px;right:24px;background:#222;border:1px solid #555;border-radius:50%;width:42px;height:42px;color:white;font-size:28px;cursor:pointer;line-height:1;z-index:10000}
 @media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 7%}.hero-image{min-height:350px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:250px}.category-card{height:230px}}
 @media(max-width:430px){.nav{padding:14px 5%}.brand{font-size:16px}.actions{gap:10px}.actions button{font-size:9px}.photo{height:210px}.category-card{height:190px}.category-card span{font-size:20px}}
 </style>
@@ -83,7 +83,7 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 </div>
 </section>
 <section class="section" id="shop">
-<div class="section-head"><div class="eyebrow">The collection</div><h2>Shop all</h2><div class="sub">Swipe photos to view all angles, tap to zoom, and choose a size.</div></div>
+<div class="section-head"><div class="eyebrow">The collection</div><h2>Shop all</h2><div class="sub">Use arrows to switch photos, tap photo to zoom, and choose a size.</div></div>
 <div class="toolbar">
 <input class="search" id="search" type="search" placeholder="Search shirts, jeans, kidswear...">
 <select class="filter" id="dept"><option value="All">All departments</option><option>Men's Wear</option><option>Kids Wear</option></select>
@@ -97,13 +97,13 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 <!-- Cart Drawer -->
 <div class="backdrop" id="backdrop"><aside class="drawer"><div class="drawer-head"><strong>YOUR BAG</strong><button id="closeCart" aria-label="Close">×</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><button class="wa-btn" id="waOrder">Order on WhatsApp</button></aside></div>
 
-<!-- Full Screen Photo Zoom & Swipe Modal -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="closeLightbox" aria-label="Close">×</button>
-  <div class="lightbox-img-wrap">
-    <button class="lb-arrow prev" id="lbPrev">‹</button>
+<!-- Full Screen Photo Zoom Modal -->
+<div class="lightbox" id="lightbox" onclick="closeZoom()">
+  <button class="lightbox-close" onclick="closeZoom()" aria-label="Close">×</button>
+  <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+    <button class="lb-arrow prev" id="lbPrev" onclick="moveLb(-1)">‹</button>
     <img id="lightboxImg" src="" alt="Product zoom">
-    <button class="lb-arrow next" id="lbNext">›</button>
+    <button class="lb-arrow next" id="lbNext" onclick="moveLb(1)">›</button>
   </div>
   <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
@@ -139,12 +139,16 @@ function goSlide(id, dir, e){
   });
 }
 
-function openZoom(id, e){
-  if(e) e.stopPropagation();
+function openZoom(id){
   lbProduct=products.find(x=>x.id===id);
+  if(!lbProduct) return;
   lbIndex=slideIndex[id]||0;
   updateLightbox();
   document.getElementById("lightbox").style.display="flex";
+}
+
+function closeZoom(){
+  document.getElementById("lightbox").style.display="none";
 }
 
 function updateLightbox(){
@@ -156,8 +160,7 @@ function updateLightbox(){
   document.getElementById("lightboxCaption").textContent=`${lbProduct.name} · ${money(lbProduct.price)}${multi ? ` (${lbIndex+1}/${lbProduct.images.length})` : ""}`;
 }
 
-function moveLb(dir, e){
-  if(e) e.stopPropagation();
+function moveLb(dir){
   if(!lbProduct || lbProduct.images.length<=1) return;
   lbIndex=(lbIndex+dir+lbProduct.images.length)%lbProduct.images.length;
   updateLightbox();
@@ -171,49 +174,23 @@ function render(){
     const multi=p.images.length>1;
     const priceHtml=p.mrp?`<span class="mrp">${money(p.mrp)}</span><strong>${money(p.price)}</strong>`:`<strong>${money(p.price)}</strong>`;
     return `<article class="product">
-      <div class="photo" id="photo-${p.id}">
+      <div class="photo" onclick="openZoom(${p.id})">
         <div class="slider" id="slider-${p.id}" style="transform:translateX(-${cur*100}%)">
           ${p.images.map(src=>`<img src="${src}" alt="${p.name}" loading="lazy">`).join("")}
         </div>
         <span class="tag">${p.tag}</span>
-        <button class="zoom-btn" onclick="openZoom(${p.id},event)">ZOOM</button>
-        ${multi ? `<button class="slide-arrow prev" onclick="goSlide(${p.id},-1,event)">‹</button><button class="slide-arrow next" onclick="goSlide(${p.id},1,event)">›</button><div class="dots">${p.images.map((_,i)=>`<span class="dot ${i===cur?'active':''}" id="dot-${p.id}-${i}"></span>`).join("")}</div>` : ""}
+        <button type="button" class="zoom-btn" onclick="event.stopPropagation();openZoom(${p.id})">ZOOM</button>
+        ${multi ? `<button type="button" class="slide-arrow prev" onclick="goSlide(${p.id},-1,event)">‹</button><button type="button" class="slide-arrow next" onclick="goSlide(${p.id},1,event)">›</button><div class="dots">${p.images.map((_,i)=>`<span class="dot ${i===cur?'active':''}" id="dot-${p.id}-${i}"></span>`).join("")}</div>` : ""}
       </div>
       <div class="info">
         <div class="name">${p.name}</div>
         <div class="meta"><span>${p.dept}</span><span>${priceHtml}</span></div>
         <label class="size-row">SIZE <select class="size" id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select></label>
-        <button class="add" onclick="addToCart(${p.id})">Add to bag</button>
+        <button type="button" class="add" onclick="addToCart(${p.id})">Add to bag</button>
       </div>
     </article>`;
   }).join(""):'<div class="empty">No matching products. Try another filter.</div>';
-
-  list.forEach(p=>{
-    const el=document.getElementById("photo-"+p.id);
-    let startX=0, moved=false;
-    el.addEventListener("touchstart",e=>{startX=e.touches[0].clientX; moved=false;},{passive:true});
-    el.addEventListener("touchmove",e=>{if(Math.abs(e.touches[0].clientX-startX)>12) moved=true;},{passive:true});
-    el.addEventListener("touchend",e=>{
-      const diff=e.changedTouches[0].clientX-startX;
-      if(Math.abs(diff)>35 && p.images.length>1){
-        goSlide(p.id, diff<0 ? 1 : -1);
-      } else if(!moved && !e.target.closest("button")){
-        openZoom(p.id);
-      }
-    },{passive:true});
-    el.addEventListener("click",e=>{
-      if(!e.target.closest("button")) openZoom(p.id);
-    });
-  });
 }
-
-let lbStartX=0;
-const lbEl=document.getElementById("lightbox");
-lbEl.addEventListener("touchstart",e=>{lbStartX=e.touches[0].clientX;},{passive:true});
-lbEl.addEventListener("touchend",e=>{
-  const diff=e.changedTouches[0].clientX-lbStartX;
-  if(Math.abs(diff)>40) moveLb(diff<0 ? 1 : -1);
-},{passive:true});
 
 function addToCart(id){
   const size=document.getElementById("size-"+id).value;
@@ -252,10 +229,6 @@ document.getElementById("searchJump").onclick=()=>{document.getElementById("shop
 document.getElementById("openCart").onclick=()=>document.getElementById("backdrop").style.display="block";
 document.getElementById("closeCart").onclick=()=>document.getElementById("backdrop").style.display="none";
 document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")e.currentTarget.style.display="none"});
-document.getElementById("lbPrev").onclick=e=>moveLb(-1,e);
-document.getElementById("lbNext").onclick=e=>moveLb(1,e);
-document.getElementById("closeLightbox").onclick=()=>document.getElementById("lightbox").style.display="none";
-document.getElementById("lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")e.currentTarget.style.display="none"});
 document.getElementById("year").textContent=new Date().getFullYear();
 render();renderCart();
 </script>
