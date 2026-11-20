@@ -2,129 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090909">
-<title>GARG COLLECTION — Since 1999</title>
+<title>Garg Collection | Shop Men's & Kids Wear</title>
 <style>
-:root{--black:#090909;--panel:#121212;--white:#f7f7f4;--muted:#a6a6a1;--line:#303030;--accent:#d8d2c5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}
-button,input{font:inherit}.announcement{text-align:center;padding:9px 12px;background:#eeeae1;color:#111;font-size:10px;letter-spacing:2px;text-transform:uppercase}
-header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{max-width:1250px;margin:auto;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{color:var(--white);text-decoration:none;font-weight:800;letter-spacing:3px;font-size:20px}.brand small{display:block;font-size:8px;letter-spacing:4px;color:var(--muted);font-weight:400;margin-top:5px;text-align:center}
-.links{display:flex;gap:27px}.links a,.nav-actions button{color:var(--white);text-decoration:none;background:none;border:0;cursor:pointer;font-size:11px;letter-spacing:1.4px;text-transform:uppercase}
-.nav-actions{display:flex;align-items:center;gap:18px}.cart-count{background:#eeeae1;color:#111;border-radius:50%;padding:3px 7px;font-size:10px;margin-left:4px}
-.hero{max-width:1400px;margin:auto;min-height:590px;display:grid;grid-template-columns:1fr 1fr;background:#151515}
-.hero-copy{padding:clamp(40px,8vw,110px) 8%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.eyebrow{font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase}
-h1{font-size:clamp(48px,7vw,88px);line-height:.94;letter-spacing:-4px;margin:25px 0 20px;text-transform:uppercase}
-.hero-copy p{max-width:390px;color:#bdbdb8;line-height:1.8;font-size:14px}
-.btn{display:inline-block;background:var(--white);color:#111;padding:15px 25px;text-decoration:none;border:1px solid var(--white);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.2s}
-.btn:hover{background:transparent;color:var(--white)}
-.hero-image{min-height:500px;background:linear-gradient(0deg,rgba(0,0,0,.1),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85') center 35%/cover}
-.section{max-width:1250px;margin:auto;padding:78px 5%}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}
-.section h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px;text-transform:uppercase;margin:10px 0}
-.sub{color:var(--muted);font-size:13px;line-height:1.7}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.category{height:250px;position:relative;overflow:hidden;background:#222;cursor:pointer;border:0;padding:0;text-align:left;color:white}
-.category img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.72)}
-.category:hover img{transform:scale(1.06)}.category span{position:absolute;bottom:18px;left:18px;font-size:18px;letter-spacing:2px;text-transform:uppercase;font-weight:bold}
-.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:24px}
-.search{background:#151515;border:1px solid var(--line);color:white;padding:13px 15px;min-width:220px;outline:none}
-.filter{background:#151515;border:1px solid var(--line);color:white;padding:13px;cursor:pointer}
+:root{--bg:#090909;--panel:#151515;--white:#f7f7f4;--muted:#aaa9a3;--line:#303030;--cream:#e9e5dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+button,input,select{font:inherit}.announcement{padding:9px 12px;text-align:center;background:var(--cream);color:#111;font-size:10px;letter-spacing:2px}
+header{position:sticky;top:0;z-index:10;background:#090909f2;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{max-width:1250px;margin:auto;padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{color:white;text-decoration:none;font-weight:800;letter-spacing:3px;font-size:19px}.brand small{display:block;text-align:center;font-size:8px;letter-spacing:3px;color:var(--muted);margin-top:5px;font-weight:400}
+.links,.actions{display:flex;align-items:center;gap:22px}.links a,.actions button{color:white;text-decoration:none;background:none;border:0;cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.count{background:var(--cream);color:#111;border-radius:50%;padding:3px 7px;margin-left:4px}
+.hero{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr 1fr;min-height:440px;background:#151515}
+.hero-copy{padding:65px 9%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.eyebrow{font-size:10px;letter-spacing:3px;color:#d8d2c5;text-transform:uppercase}
+h1{font-size:clamp(42px,6vw,76px);line-height:.95;letter-spacing:-3px;text-transform:uppercase;margin:22px 0}
+.hero-copy p{max-width:390px;color:#bbb;line-height:1.8;font-size:14px}
+.btn{display:inline-block;background:var(--white);color:#111;border:1px solid var(--white);padding:14px 22px;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.hero-image{min-height:400px;background:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1100&q=85') center 35%/cover}
+.section{max-width:1250px;margin:auto;padding:65px 5%}.section-head{margin-bottom:25px}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1.5px;text-transform:uppercase;margin:10px 0}
+.sub{font-size:13px;color:var(--muted);line-height:1.7}
+.category-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.category-card{position:relative;height:300px;overflow:hidden;border:0;padding:0;background:#222;color:white;text-align:left;cursor:pointer}
+.category-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.68);transition:transform .4s}
+.category-card:hover img{transform:scale(1.04)}.category-card span{position:absolute;left:22px;bottom:22px;font-size:25px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.search,.filter{background:#151515;border:1px solid #444;color:white;padding:13px 14px;outline:none}.search{flex:1;min-width:210px}.filter{min-width:165px}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product{min-width:0}.product-photo{height:310px;position:relative;background:#1c1c1c;overflow:hidden}
-.product-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.product:hover img{transform:scale(1.04)}
-.tag{position:absolute;top:12px;left:12px;background:#f2f0ea;color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;text-transform:uppercase}
-.product-info{padding:14px 0}.product-name{font-size:13px;letter-spacing:.5px}.product-meta{display:flex;justify-content:space-between;align-items:center;margin-top:9px;color:#c4c4be;font-size:12px}
-.add{width:100%;margin-top:13px;padding:11px;background:transparent;border:1px solid #555;color:white;text-transform:uppercase;letter-spacing:1.5px;font-size:9px;cursor:pointer}.add:hover{background:white;color:#111}
-.story{background:#e9e6df;color:#111;display:grid;grid-template-columns:1fr 1fr;min-height:340px}
-.story-img{background:url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=85') center/cover}
-.story-copy{padding:55px 9%;display:flex;flex-direction:column;justify-content:center}.story-copy .eyebrow{color:#555}.story-copy h2{font-size:clamp(30px,4vw,48px);line-height:1;margin:18px 0}.story-copy p{font-size:13px;line-height:1.8;color:#444;max-width:440px}
-footer{border-top:1px solid var(--line);padding:45px 5%;text-align:center;color:var(--muted);font-size:11px;letter-spacing:1px}
-.footer-brand{font-size:22px;color:white;font-weight:bold;letter-spacing:4px;margin-bottom:10px}
-.drawer-backdrop{display:none;position:fixed;inset:0;background:#0009;z-index:20}.drawer{position:absolute;right:0;top:0;height:100%;width:min(420px,100%);background:#111;padding:25px;overflow:auto}
-.drawer-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
-.drawer-top button{background:none;border:0;color:white;font-size:24px;cursor:pointer}
-.cart-row{display:flex;justify-content:space-between;gap:12px;padding:18px 0;border-bottom:1px solid var(--line);font-size:13px}
-.qty{display:flex;align-items:center;gap:10px;margin-top:9px}.qty button{background:#292929;border:0;color:white;padding:4px 9px;cursor:pointer}
-.total{display:flex;justify-content:space-between;padding:20px 0;font-weight:bold}
-.notice{font-size:11px;color:#aaa;line-height:1.6;margin-top:15px}
-.empty{color:#aaa;padding:35px 0;text-align:center}
-@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:65px 7%}.hero-image{min-height:390px}.categories{grid-template-columns:repeat(2,1fr)}.category{height:210px}.products{grid-template-columns:repeat(2,1fr);gap:14px}.product-photo{height:260px}.story{grid-template-columns:1fr}.story-img{min-height:260px}.section{padding:58px 5%}}
-@media(max-width:430px){.nav{padding:15px 5%}.brand{font-size:17px}.nav-actions{gap:10px}.nav-actions button{font-size:10px}.hero-image{min-height:320px}.product-photo{height:215px}.section-head{align-items:flex-start;flex-direction:column}.search{width:100%}}
+.product{min-width:0}.photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.product:hover .photo img{transform:scale(1.04)}
+.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px}
+.info{padding:13px 0}.name{font-size:13px;letter-spacing:.3px}.meta{display:flex;justify-content:space-between;gap:8px;margin-top:8px;color:#ccc;font-size:12px}
+.size-row{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;color:#bbb}.size{flex:1;background:#151515;border:1px solid #444;color:white;padding:8px}
+.add{width:100%;margin-top:9px;padding:11px;background:transparent;border:1px solid #777;color:white;text-transform:uppercase;letter-spacing:1.5px;font-size:9px;cursor:pointer}.add:hover{background:white;color:#111}
+.note{margin-top:22px;color:#aaa;font-size:11px;line-height:1.7}
+footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:#aaa;font-size:11px;letter-spacing:1px}.footer-brand{color:white;font-size:21px;font-weight:bold;letter-spacing:4px;margin-bottom:10px}
+.backdrop{display:none;position:fixed;inset:0;background:#000a;z-index:30}.drawer{position:absolute;right:0;top:0;height:100%;width:min(420px,100%);background:#111;padding:24px;overflow:auto}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;padding-bottom:14px}.drawer-head button{background:none;color:white;border:0;font-size:25px}
+.cart-row{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid #333;font-size:13px}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{background:#333;color:white;border:0;padding:4px 9px}
+.total{display:flex;justify-content:space-between;padding:20px 0;font-weight:bold}.empty{text-align:center;padding:35px 0;color:#aaa}
+@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 7%}.hero-image{min-height:350px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:250px}.category-card{height:230px}}
+@media(max-width:430px){.nav{padding:14px 5%}.brand{font-size:16px}.actions{gap:10px}.actions button{font-size:9px}.photo{height:210px}.category-card{height:190px}.category-card span{font-size:20px}}
 </style>
 </head>
 <body>
 <div class="announcement">WELCOME TO GARG COLLECTION · SINCE 1999</div>
 <header><nav class="nav">
-<a class="brand" href="#">GARG COLLECTION<small>STYLE THAT DEFINES YOU</small></a>
-<div class="links"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#shop">Shop</a><a href="#story">Our Story</a></div>
-<div class="nav-actions"><button id="searchJump">SEARCH</button><button id="cartOpen">BAG <span class="cart-count" id="cartCount">0</span></button></div>
+<a class="brand" href="#home">GARG COLLECTION<small>STYLE THAT DEFINES YOU</small></a>
+<div class="links"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#shop">Shop</a></div>
+<div class="actions"><button id="searchJump">SEARCH</button><button id="openCart">BAG <span class="count" id="cartCount">0</span></button></div>
 </nav></header>
 <main id="home">
 <section class="hero">
-<div class="hero-copy"><div class="eyebrow">Everyday style · Since 1999</div><h1>Wear your<br>confidence.</h1><p>Discover everyday essentials and timeless styles, selected for the way you live.</p><a class="btn" href="#shop">Explore collection</a></div>
+<div class="hero-copy"><div class="eyebrow">Everyday style · Since 1999</div><h1>Find your<br>everyday fit.</h1><p>Explore selected styles for men and kids at Garg Collection, Mandawari.</p><a class="btn" href="#shop">Shop collection</a></div>
 <div class="hero-image" role="img" aria-label="Fashion editorial"></div>
 </section>
 <section class="section" id="categories">
-<div class="section-head"><div><div class="eyebrow">Find your style</div><h2>Shop by category</h2><div class="sub">Your wardrobe, your rules.</div></div></div>
-<div class="categories">
-<button class="category" data-category="Shirts"><img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80'"><span>Shirts</span></button>
-<button class="category" data-category="Jeans"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80"><span>Jeans</span></button>
-<button class="category" data-category="T-Shirts"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"><span>T-Shirts</span></button>
-<button class="category" data-category="Trousers"><img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=80"><span>Trousers</span></button>
+<div class="section-head"><div class="eyebrow">Shop your way</div><h2>Choose a department</h2><div class="sub">Men's Wear and Kids Wear — start exploring.</div></div>
+<div class="category-grid">
+<button class="category-card" data-dept="Men's Wear"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85" alt="Men's fashion"><span>Men's Wear</span></button>
+<button class="category-card" data-dept="Kids Wear"><img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=900&q=85" alt="Kids fashion"><span>Kids Wear</span></button>
 </div>
 </section>
 <section class="section" id="shop">
-<div class="section-head"><div><div class="eyebrow">Curated for you</div><h2>Featured products</h2><div class="sub">A first look at the collection.</div></div></div>
-<div class="toolbar"><input class="search" id="searchInput" type="search" placeholder="Search products..."><select class="filter" id="categoryFilter"><option value="All">All categories</option><option>Shirts</option><option>Jeans</option><option>T-Shirts</option><option>Trousers</option></select></div>
+<div class="section-head"><div class="eyebrow">The collection</div><h2>Shop all</h2><div class="sub">Choose a department, search styles and select a size.</div></div>
+<div class="toolbar">
+<input class="search" id="search" type="search" placeholder="Search shirts, jeans, kidswear...">
+<select class="filter" id="dept"><option value="All">All departments</option><option>Men's Wear</option><option>Kids Wear</option></select>
+<select class="filter" id="type"><option value="All">All product types</option><option>Shirts</option><option>T-Shirts</option><option>Jeans</option><option>Trousers</option><option>Sets</option><option>Shorts</option></select>
+</div>
 <div class="products" id="products"></div>
-<p class="notice">Preview catalogue: product names, images and prices shown here are sample content. Replace these with your actual shop inventory before accepting orders.</p>
+<p class="note">IMPORTANT: These are sample catalogue items and illustrative prices/images for layout testing only. Replace them with Garg Collection's actual products, prices, sizes and photos before accepting customer orders. The bag is a front-end preview; checkout and payment are not connected yet.</p>
 </section>
-<section class="story" id="story"><div class="story-img"></div><div class="story-copy"><div class="eyebrow">Our journey · Since 1999</div><h2>Rooted in tradition.<br>Styled for today.</h2><p>Garg Collection brings together everyday fashion and a commitment to helping you find your style. Visit us in Mandawari or explore our collection online.</p><a class="btn" href="#shop" style="align-self:flex-start;background:#111;color:#fff;border-color:#111">Discover the collection</a></div></section>
 </main>
 <footer><div class="footer-brand">GARG COLLECTION</div><div>MAHARIYA WALE KI DUKAN · SINCE 1999</div><p>Mandawari, Rajasthan</p><p>© <span id="year"></span> Garg Collection. All rights reserved.</p></footer>
-<div class="drawer-backdrop" id="drawer"><aside class="drawer"><div class="drawer-top"><strong>YOUR BAG</strong><button id="cartClose" aria-label="Close cart">×</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><button class="btn" style="width:100%" id="checkout">Continue to checkout</button><p class="notice" id="checkoutNote">Checkout is a preview only. Online payments, delivery rules and order processing must be connected before launch.</p></aside></div>
+<div class="backdrop" id="backdrop"><aside class="drawer"><div class="drawer-head"><strong>YOUR BAG</strong><button id="closeCart" aria-label="Close">×</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><p class="note">Cart preview only. Secure checkout, delivery and payment need to be connected before taking real orders.</p></aside></div>
 <script>
 const products=[
-{id:1,name:"Classic Oxford Shirt",category:"Shirts",price:999,image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85",tag:"Bestseller"},
-{id:2,name:"Everyday Denim",category:"Jeans",price:1499,image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85",tag:"New"},
-{id:3,name:"Essential Cotton Tee",category:"T-Shirts",price:599,image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85",tag:"Essential"},
-{id:4,name:"Relaxed Fit Trousers",category:"Trousers",price:1199,image:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85",tag:""},
-{id:5,name:"Casual Everyday Shirt",category:"Shirts",price:899,image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85",tag:""},
-{id:6,name:"Straight Fit Denim",category:"Jeans",price:1399,image:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85",tag:""},
-{id:7,name:"Minimal Logo T-Shirt",category:"T-Shirts",price:499,image:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=700&q=85",tag:""},
-{id:8,name:"Smart Casual Pants",category:"Trousers",price:1299,image:"https://images.unsplash.com/photo-1506629905607-d9a6f5f4b5c2?auto=format&fit=crop&w=700&q=85",tag:""}
+{id:1,name:"Classic Casual Shirt",dept:"Men's Wear",type:"Shirts",price:899,sizes:["S","M","L","XL"],image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+{id:2,name:"Everyday Denim Jeans",dept:"Men's Wear",type:"Jeans",price:1299,sizes:["30","32","34","36"],image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+{id:3,name:"Essential Cotton T-Shirt",dept:"Men's Wear",type:"T-Shirts",price:499,sizes:["S","M","L","XL"],image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+{id:4,name:"Smart Casual Trousers",dept:"Men's Wear",type:"Trousers",price:1099,sizes:["30","32","34","36"],image:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+{id:5,name:"Kids Casual T-Shirt",dept:"Kids Wear",type:"T-Shirts",price:299,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
+{id:6,name:"Kids Everyday Set",dept:"Kids Wear",type:"Sets",price:599,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
+{id:7,name:"Kids Denim Shorts",dept:"Kids Wear",type:"Shorts",price:449,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
+{id:8,name:"Kids Printed Tee",dept:"Kids Wear",type:"T-Shirts",price:349,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85",tag:"Kids"}
 ];
-let cart={};
-const rupee=n=>"₹"+n.toLocaleString("en-IN");
-const productsEl=document.getElementById("products");
-function renderProducts(){
- const q=document.getElementById("searchInput").value.toLowerCase();
- const cat=document.getElementById("categoryFilter").value;
- const shown=products.filter(p=>(cat==="All"||p.category===cat)&&(p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)));
- productsEl.innerHTML=shown.length?shown.map(p=>`<article class="product"><div class="product-photo"><img src="${p.image}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80'">${p.tag?`<span class="tag">${p.tag}</span>`:""}</div><div class="product-info"><div class="product-name">${p.name}</div><div class="product-meta"><span>${p.category}</span><strong>${rupee(p.price)}</strong></div><button class="add" onclick="addToCart(${p.id})">Add to bag</button></div></article>`).join(""):'<p class="empty">No products found. Try another search.</p>';
+let cart=[];
+const money=n=>"₹"+n.toLocaleString("en-IN");
+const productBox=document.getElementById("products");
+function render(){
+ const q=document.getElementById("search").value.toLowerCase(),d=document.getElementById("dept").value,t=document.getElementById("type").value;
+ const list=products.filter(p=>(d==="All"||p.dept===d)&&(t==="All"||p.type===t)&&(p.name.toLowerCase().includes(q)||p.type.toLowerCase().includes(q)||p.dept.toLowerCase().includes(q)));
+ productBox.innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span></div><div class="info"><div class="name">${p.name}</div><div class="meta"><span>${p.dept}</span><strong>${money(p.price)}</strong></div><label class="size-row">SIZE <select class="size" id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select></label><button class="add" onclick="addToCart(${p.id})">Add to bag</button></div></article>`).join(""):'<div class="empty">No matching products. Try another filter.</div>';
 }
-function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();document.getElementById("drawer").style.display="block"}
-function renderCart(){
- const entries=Object.entries(cart);
- document.getElementById("cartCount").textContent=entries.reduce((s,[,q])=>s+q,0);
- const total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id==id).price*q,0);
- document.getElementById("subtotal").textContent=rupee(total);
- document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{const p=products.find(x=>x.id==id);return `<div class="cart-row"><div><strong>${p.name}</strong><div class="sub">${rupee(p.price)} each</div><div class="qty"><button onclick="changeQty(${id},-1)">−</button><span>${q}</span><button onclick="changeQty(${id},1)">+</button></div></div><strong>${rupee(p.price*q)}</strong></div>`}).join(""):'<div class="empty">Your bag is empty.</div>';
-}
-function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
-document.getElementById("searchInput").addEventListener("input",renderProducts);
-document.getElementById("categoryFilter").addEventListener("change",renderProducts);
-document.querySelectorAll(".category").forEach(b=>b.addEventListener("click",()=>{document.getElementById("categoryFilter").value=b.dataset.category;renderProducts();document.getElementById("shop").scrollIntoView()}));
-document.getElementById("searchJump").onclick=()=>{document.getElementById("shop").scrollIntoView();document.getElementById("searchInput").focus()};
-document.getElementById("cartOpen").onclick=()=>document.getElementById("drawer").style.display="block";
-document.getElementById("cartClose").onclick=()=>document.getElementById("drawer").style.display="none";
-document.getElementById("drawer").addEventListener("click",e=>{if(e.target.id==="drawer")e.currentTarget.style.display="none"});
-document.getElementById("checkout").onclick=()=>alert("This is a homepage prototype. Connect a secure checkout and payment provider before taking real orders.");
-document.getElementById("year").textContent=new Date().getFullYear();
-renderProducts();renderCart();
+function addToCart(id){const p=products.find(x=>x.id===id),size=document.getElementById("size-"+id).value;const found=cart.find(x=>x.id===id&&x.size===size);if(found)found.qty++;else cart.push({id,size,qty:1});renderCart();document.getElementById("backdrop").style.display="block";}
+function renderCart(){document.getElementById("cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);document.getElementById("subtotal").textContent=money(cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0));document.getElementById("cartItems").innerHTML=cart.length?cart.map((x,i)=>{const p=products.find(y=>y.id===x.id);return `<div class="cart-row"><div><strong>${p.name}</strong><div class="sub">Size: ${x.size} · ${money(p.price)}</div><div class="qty"><button onclick="changeQty(${i},-1)">−</button><span>${x.qty}</span><button onclick="changeQty(${i},1)">+</button></div></div><strong>${money(p.price*x.qty)}</strong></div>`}).join(""):'<div class="empty">Your bag is empty.</div>';}
+function changeQty(i,n){cart[i].qty+=n;if(cart[i].qty<=0)cart.splice(i,1);renderCart();}
+document.getElementById("search").addEventListener("input",render);document.getElementById("dept").addEventListener("change",render);document.getElementById("type").addEventListener("change",render);
+document.querySelectorAll(".category-card").forEach(b=>b.addEventListener("click",()=>{document.getElementById("dept").value=b.dataset.dept;document.getElementById("type").value="All";render();document.getElementById("shop").scrollIntoView();}));
+document.getElementById("searchJump").onclick=()=>{document.getElementById("shop").scrollIntoView();document.getElementById("search").focus()};
+document.getElementById("openCart").onclick=()=>document.getElementById("backdrop").style.display="block";document.getElementById("closeCart").onclick=()=>document.getElementById("backdrop").style.display="none";document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")e.currentTarget.style.display="none"});
+document.getElementById("year").textContent=new Date().getFullYear();render();renderCart();
 </script>
-</body></html>
+</body>
+</html>
