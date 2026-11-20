@@ -31,18 +31,23 @@ h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1.5px;text-transform:uppercase
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
 .search,.filter{background:#151515;border:1px solid #444;color:white;padding:13px 14px;outline:none}.search{flex:1;min-width:210px}.filter{min-width:165px}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product{min-width:0}.photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden}
+.product{min-width:0}.photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden;cursor:zoom-in}
 .photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.product:hover .photo img{transform:scale(1.04)}
 .tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:bold}
+.zoom-hint{position:absolute;bottom:10px;right:10px;background:#000a;color:#fff;padding:4px 8px;font-size:9px;letter-spacing:1px;border-radius:3px}
 .info{padding:13px 0}.name{font-size:13px;letter-spacing:.3px;font-weight:bold}.meta{display:flex;justify-content:space-between;gap:8px;margin-top:8px;color:#ccc;font-size:12px}
 .size-row{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;color:#bbb}.size{flex:1;background:#151515;border:1px solid #444;color:white;padding:8px}
 .add{width:100%;margin-top:9px;padding:11px;background:transparent;border:1px solid #777;color:white;text-transform:uppercase;letter-spacing:1.5px;font-size:9px;cursor:pointer}.add:hover{background:white;color:#111}
 footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:#aaa;font-size:11px;letter-spacing:1px}.footer-brand{color:white;font-size:21px;font-weight:bold;letter-spacing:4px;margin-bottom:10px}
 .backdrop{display:none;position:fixed;inset:0;background:#000a;z-index:30}.drawer{position:absolute;right:0;top:0;height:100%;width:min(420px,100%);background:#111;padding:24px;overflow:auto}
-.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;padding-bottom:14px}.drawer-head button{background:none;color:white;border:0;font-size:25px}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;padding-bottom:14px}.drawer-head button{background:none;color:white;border:0;font-size:25px;cursor:pointer}
 .cart-row{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid #333;font-size:13px}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{background:#333;color:white;border:0;padding:4px 9px}
 .total{display:flex;justify-content:space-between;padding:20px 0;font-weight:bold}.empty{text-align:center;padding:35px 0;color:#aaa}
 .wa-btn{width:100%;padding:14px;background:var(--green);color:#000;border:0;font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:12px;cursor:pointer;border-radius:3px}
+.lightbox{display:none;position:fixed;inset:0;background:#000e;z-index:50;align-items:center;justify-content:center;flex-direction:column;padding:20px}
+.lightbox img{max-width:92%;max-height:80vh;object-fit:contain;border:1px solid #333}
+.lightbox-caption{margin-top:14px;font-size:14px;letter-spacing:1px;color:var(--cream);text-align:center}
+.lightbox-close{position:absolute;top:18px;right:24px;background:none;border:0;color:white;font-size:36px;cursor:pointer;line-height:1}
 @media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 7%}.hero-image{min-height:350px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:250px}.category-card{height:230px}}
 @media(max-width:430px){.nav{padding:14px 5%}.brand{font-size:16px}.actions{gap:10px}.actions button{font-size:9px}.photo{height:210px}.category-card{height:190px}.category-card span{font-size:20px}}
 </style>
@@ -67,7 +72,7 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 </div>
 </section>
 <section class="section" id="shop">
-<div class="section-head"><div class="eyebrow">The collection</div><h2>Shop all</h2><div class="sub">Choose a department, search styles and select a size.</div></div>
+<div class="section-head"><div class="eyebrow">The collection</div><h2>Shop all</h2><div class="sub">Tap any photo to zoom in, choose a size and add to bag.</div></div>
 <div class="toolbar">
 <input class="search" id="search" type="search" placeholder="Search shirts, jeans, kidswear...">
 <select class="filter" id="dept"><option value="All">All departments</option><option>Men's Wear</option><option>Kids Wear</option></select>
@@ -77,7 +82,17 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 </section>
 </main>
 <footer><div class="footer-brand">GARG COLLECTION</div><div>MAHARIYA WALE KI DUKAN · SINCE 1999</div><p>Mandawari, Rajasthan</p><p>© <span id="year"></span> Garg Collection. All rights reserved.</p></footer>
+
+<!-- Cart Drawer -->
 <div class="backdrop" id="backdrop"><aside class="drawer"><div class="drawer-head"><strong>YOUR BAG</strong><button id="closeCart" aria-label="Close">×</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><button class="wa-btn" id="waOrder">Order on WhatsApp</button></aside></div>
+
+<!-- Full Screen Photo Zoom Modal -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="closeLightbox" aria-label="Close">×</button>
+  <img id="lightboxImg" src="" alt="Product zoom">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <script>
 const WHATSAPP_NUMBER = "919999999999";
 
@@ -94,10 +109,16 @@ let cart=[];
 const money=n=>"₹"+n.toLocaleString("en-IN");
 const productBox=document.getElementById("products");
 
+function openZoom(imgSrc, title, price){
+  document.getElementById("lightboxImg").src = imgSrc;
+  document.getElementById("lightboxCaption").textContent = `${title} · ${money(price)}`;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
 function render(){
   const q=document.getElementById("search").value.toLowerCase(),d=document.getElementById("dept").value,t=document.getElementById("type").value;
   const list=products.filter(p=>(d==="All"||p.dept===d)&&(t==="All"||p.type===t)&&(p.name.toLowerCase().includes(q)||p.type.toLowerCase().includes(q)||p.dept.toLowerCase().includes(q)));
-  productBox.innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span></div><div class="info"><div class="name">${p.name}</div><div class="meta"><span>${p.dept}</span><strong>${money(p.price)}</strong></div><label class="size-row">SIZE <select class="size" id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select></label><button class="add" onclick="addToCart(${p.id})">Add to bag</button></div></article>`).join(""):'<div class="empty">No matching products. Try another filter.</div>';
+  productBox.innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo" onclick="openZoom('${p.image}','${p.name.replace(/'/g,"\\'")}',${p.price})"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span><span class="zoom-hint">TAP TO ZOOM</span></div><div class="info"><div class="name">${p.name}</div><div class="meta"><span>${p.dept}</span><strong>${money(p.price)}</strong></div><label class="size-row">SIZE <select class="size" id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select></label><button class="add" onclick="addToCart(${p.id})">Add to bag</button></div></article>`).join(""):'<div class="empty">No matching products. Try another filter.</div>';
 }
 
 function addToCart(id){
@@ -137,6 +158,8 @@ document.getElementById("searchJump").onclick=()=>{document.getElementById("shop
 document.getElementById("openCart").onclick=()=>document.getElementById("backdrop").style.display="block";
 document.getElementById("closeCart").onclick=()=>document.getElementById("backdrop").style.display="none";
 document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")e.currentTarget.style.display="none"});
+document.getElementById("closeLightbox").onclick=()=>document.getElementById("lightbox").style.display="none";
+document.getElementById("lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")e.currentTarget.style.display="none"});
 document.getElementById("year").textContent=new Date().getFullYear();
 render();renderCart();
 </script>
