@@ -6,20 +6,20 @@
 <meta name="theme-color" content="#090909">
 <title>Garg Collection | Shop Men's & Kids Wear</title>
 <style>
-:root{--bg:#090909;--panel:#151515;--white:#f7f7f4;--muted:#aaa9a3;--line:#303030;--cream:#e9e5dc}
+:root{--bg:#090909;--panel:#151515;--white:#f7f7f4;--muted:#aaa9a3;--line:#303030;--cream:#e9e5dc;--green:#25D366}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
-button,input,select{font:inherit}.announcement{padding:9px 12px;text-align:center;background:var(--cream);color:#111;font-size:10px;letter-spacing:2px}
+button,input,select{font:inherit}.announcement{padding:9px 12px;text-align:center;background:var(--cream);color:#111;font-size:10px;letter-spacing:2px;font-weight:bold}
 header{position:sticky;top:0;z-index:10;background:#090909f2;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
 .nav{max-width:1250px;margin:auto;padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{color:white;text-decoration:none;font-weight:800;letter-spacing:3px;font-size:19px}.brand small{display:block;text-align:center;font-size:8px;letter-spacing:3px;color:var(--muted);margin-top:5px;font-weight:400}
 .links,.actions{display:flex;align-items:center;gap:22px}.links a,.actions button{color:white;text-decoration:none;background:none;border:0;cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
-.count{background:var(--cream);color:#111;border-radius:50%;padding:3px 7px;margin-left:4px}
+.count{background:var(--cream);color:#111;border-radius:50%;padding:3px 7px;margin-left:4px;font-weight:bold}
 .hero{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr 1fr;min-height:440px;background:#151515}
 .hero-copy{padding:65px 9%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 .eyebrow{font-size:10px;letter-spacing:3px;color:#d8d2c5;text-transform:uppercase}
 h1{font-size:clamp(42px,6vw,76px);line-height:.95;letter-spacing:-3px;text-transform:uppercase;margin:22px 0}
 .hero-copy p{max-width:390px;color:#bbb;line-height:1.8;font-size:14px}
-.btn{display:inline-block;background:var(--white);color:#111;border:1px solid var(--white);padding:14px 22px;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn{display:inline-block;background:var(--white);color:#111;border:1px solid var(--white);padding:14px 22px;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;font-weight:bold}
 .hero-image{min-height:400px;background:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1100&q=85') center 35%/cover}
 .section{max-width:1250px;margin:auto;padding:65px 5%}.section-head{margin-bottom:25px}
 h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1.5px;text-transform:uppercase;margin:10px 0}
@@ -33,16 +33,16 @@ h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1.5px;text-transform:uppercase
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .product{min-width:0}.photo{height:285px;background:#1b1b1b;position:relative;overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.product:hover .photo img{transform:scale(1.04)}
-.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px}
-.info{padding:13px 0}.name{font-size:13px;letter-spacing:.3px}.meta{display:flex;justify-content:space-between;gap:8px;margin-top:8px;color:#ccc;font-size:12px}
+.tag{position:absolute;top:12px;left:12px;background:var(--cream);color:#111;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:bold}
+.info{padding:13px 0}.name{font-size:13px;letter-spacing:.3px;font-weight:bold}.meta{display:flex;justify-content:space-between;gap:8px;margin-top:8px;color:#ccc;font-size:12px}
 .size-row{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;color:#bbb}.size{flex:1;background:#151515;border:1px solid #444;color:white;padding:8px}
 .add{width:100%;margin-top:9px;padding:11px;background:transparent;border:1px solid #777;color:white;text-transform:uppercase;letter-spacing:1.5px;font-size:9px;cursor:pointer}.add:hover{background:white;color:#111}
-.note{margin-top:22px;color:#aaa;font-size:11px;line-height:1.7}
 footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:#aaa;font-size:11px;letter-spacing:1px}.footer-brand{color:white;font-size:21px;font-weight:bold;letter-spacing:4px;margin-bottom:10px}
 .backdrop{display:none;position:fixed;inset:0;background:#000a;z-index:30}.drawer{position:absolute;right:0;top:0;height:100%;width:min(420px,100%);background:#111;padding:24px;overflow:auto}
 .drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;padding-bottom:14px}.drawer-head button{background:none;color:white;border:0;font-size:25px}
 .cart-row{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid #333;font-size:13px}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{background:#333;color:white;border:0;padding:4px 9px}
 .total{display:flex;justify-content:space-between;padding:20px 0;font-weight:bold}.empty{text-align:center;padding:35px 0;color:#aaa}
+.wa-btn{width:100%;padding:14px;background:var(--green);color:#000;border:0;font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:12px;cursor:pointer;border-radius:3px}
 @media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 7%}.hero-image{min-height:350px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:250px}.category-card{height:230px}}
 @media(max-width:430px){.nav{padding:14px 5%}.brand{font-size:16px}.actions{gap:10px}.actions button{font-size:9px}.photo{height:210px}.category-card{height:190px}.category-card span{font-size:20px}}
 </style>
@@ -74,38 +74,71 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 <select class="filter" id="type"><option value="All">All product types</option><option>Shirts</option><option>T-Shirts</option><option>Jeans</option><option>Trousers</option><option>Sets</option><option>Shorts</option></select>
 </div>
 <div class="products" id="products"></div>
-<p class="note">IMPORTANT: These are sample catalogue items and illustrative prices/images for layout testing only. Replace them with Garg Collection's actual products, prices, sizes and photos before accepting customer orders. The bag is a front-end preview; checkout and payment are not connected yet.</p>
 </section>
 </main>
 <footer><div class="footer-brand">GARG COLLECTION</div><div>MAHARIYA WALE KI DUKAN · SINCE 1999</div><p>Mandawari, Rajasthan</p><p>© <span id="year"></span> Garg Collection. All rights reserved.</p></footer>
-<div class="backdrop" id="backdrop"><aside class="drawer"><div class="drawer-head"><strong>YOUR BAG</strong><button id="closeCart" aria-label="Close">×</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><p class="note">Cart preview only. Secure checkout, delivery and payment need to be connected before taking real orders.</p></aside></div>
+<div class="backdrop" id="backdrop"><aside class="drawer"><div class="drawer-head"><strong>YOUR BAG</strong><button id="closeCart" aria-label="Close">×</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><button class="wa-btn" id="waOrder">Order on WhatsApp</button></aside></div>
 <script>
+const WHATSAPP_NUMBER = "919999999999";
+
 const products=[
-{id:1,name:"Classic Casual Shirt",dept:"Men's Wear",type:"Shirts",price:899,sizes:["S","M","L","XL"],image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85",tag:"Men"},
-{id:2,name:"Everyday Denim Jeans",dept:"Men's Wear",type:"Jeans",price:1299,sizes:["30","32","34","36"],image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85",tag:"Men"},
-{id:3,name:"Essential Cotton T-Shirt",dept:"Men's Wear",type:"T-Shirts",price:499,sizes:["S","M","L","XL"],image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85",tag:"Men"},
-{id:4,name:"Smart Casual Trousers",dept:"Men's Wear",type:"Trousers",price:1099,sizes:["30","32","34","36"],image:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85",tag:"Men"},
-{id:5,name:"Kids Casual T-Shirt",dept:"Kids Wear",type:"T-Shirts",price:299,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
-{id:6,name:"Kids Everyday Set",dept:"Kids Wear",type:"Sets",price:599,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
-{id:7,name:"Kids Denim Shorts",dept:"Kids Wear",type:"Shorts",price:449,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
-{id:8,name:"Kids Printed Tee",dept:"Kids Wear",type:"T-Shirts",price:349,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85",tag:"Kids"}
+  {id:1,name:"Zara Jeans",dept:"Men's Wear",type:"Jeans",price:599,sizes:["28"],image:"Jeans1.JPG",tag:"Men"},
+  {id:2,name:"Classic Casual Shirt",dept:"Men's Wear",type:"Shirts",price:899,sizes:["S","M","L","XL"],image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+  {id:3,name:"Essential Cotton T-Shirt",dept:"Men's Wear",type:"T-Shirts",price:499,sizes:["S","M","L","XL"],image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+  {id:4,name:"Smart Casual Trousers",dept:"Men's Wear",type:"Trousers",price:1099,sizes:["30","32","34","36"],image:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85",tag:"Men"},
+  {id:5,name:"Kids Casual T-Shirt",dept:"Kids Wear",type:"T-Shirts",price:299,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85",tag:"Kids"},
+  {id:6,name:"Kids Everyday Set",dept:"Kids Wear",type:"Sets",price:599,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],image:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85",tag:"Kids"}
 ];
+
 let cart=[];
 const money=n=>"₹"+n.toLocaleString("en-IN");
 const productBox=document.getElementById("products");
+
 function render(){
- const q=document.getElementById("search").value.toLowerCase(),d=document.getElementById("dept").value,t=document.getElementById("type").value;
- const list=products.filter(p=>(d==="All"||p.dept===d)&&(t==="All"||p.type===t)&&(p.name.toLowerCase().includes(q)||p.type.toLowerCase().includes(q)||p.dept.toLowerCase().includes(q)));
- productBox.innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span></div><div class="info"><div class="name">${p.name}</div><div class="meta"><span>${p.dept}</span><strong>${money(p.price)}</strong></div><label class="size-row">SIZE <select class="size" id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select></label><button class="add" onclick="addToCart(${p.id})">Add to bag</button></div></article>`).join(""):'<div class="empty">No matching products. Try another filter.</div>';
+  const q=document.getElementById("search").value.toLowerCase(),d=document.getElementById("dept").value,t=document.getElementById("type").value;
+  const list=products.filter(p=>(d==="All"||p.dept===d)&&(t==="All"||p.type===t)&&(p.name.toLowerCase().includes(q)||p.type.toLowerCase().includes(q)||p.dept.toLowerCase().includes(q)));
+  productBox.innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span></div><div class="info"><div class="name">${p.name}</div><div class="meta"><span>${p.dept}</span><strong>${money(p.price)}</strong></div><label class="size-row">SIZE <select class="size" id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select></label><button class="add" onclick="addToCart(${p.id})">Add to bag</button></div></article>`).join(""):'<div class="empty">No matching products. Try another filter.</div>';
 }
-function addToCart(id){const p=products.find(x=>x.id===id),size=document.getElementById("size-"+id).value;const found=cart.find(x=>x.id===id&&x.size===size);if(found)found.qty++;else cart.push({id,size,qty:1});renderCart();document.getElementById("backdrop").style.display="block";}
-function renderCart(){document.getElementById("cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);document.getElementById("subtotal").textContent=money(cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0));document.getElementById("cartItems").innerHTML=cart.length?cart.map((x,i)=>{const p=products.find(y=>y.id===x.id);return `<div class="cart-row"><div><strong>${p.name}</strong><div class="sub">Size: ${x.size} · ${money(p.price)}</div><div class="qty"><button onclick="changeQty(${i},-1)">−</button><span>${x.qty}</span><button onclick="changeQty(${i},1)">+</button></div></div><strong>${money(p.price*x.qty)}</strong></div>`}).join(""):'<div class="empty">Your bag is empty.</div>';}
+
+function addToCart(id){
+  const size=document.getElementById("size-"+id).value;
+  const found=cart.find(x=>x.id===id&&x.size===size);
+  if(found)found.qty++;else cart.push({id,size,qty:1});
+  renderCart();
+  document.getElementById("backdrop").style.display="block";
+}
+
+function renderCart(){
+  document.getElementById("cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);
+  document.getElementById("subtotal").textContent=money(cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0));
+  document.getElementById("cartItems").innerHTML=cart.length?cart.map((x,i)=>{const p=products.find(y=>y.id===x.id);return `<div class="cart-row"><div><strong>${p.name}</strong><div class="sub">Size: ${x.size} · ${money(p.price)}</div><div class="qty"><button onclick="changeQty(${i},-1)">−</button><span>${x.qty}</span><button onclick="changeQty(${i},1)">+</button></div></div><strong>${money(p.price*x.qty)}</strong></div>`}).join(""):'<div class="empty">Your bag is empty.</div>';
+}
+
 function changeQty(i,n){cart[i].qty+=n;if(cart[i].qty<=0)cart.splice(i,1);renderCart();}
-document.getElementById("search").addEventListener("input",render);document.getElementById("dept").addEventListener("change",render);document.getElementById("type").addEventListener("change",render);
+
+document.getElementById("waOrder").onclick=()=>{
+  if(!cart.length){alert("Pehle bag mein koi item add karein!");return;}
+  let msg="Namaste Garg Collection! Mujhe ye items order karne hain:\n\n";
+  let total=0;
+  cart.forEach((x,idx)=>{
+    const p=products.find(y=>y.id===x.id);
+    msg+=`${idx+1}. ${p.name} (Size: ${x.size}) x ${x.qty} = ₹${p.price*x.qty}\n`;
+    total+=p.price*x.qty;
+  });
+  msg+=`\n*Total Amount: ₹${total}*`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+};
+
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("dept").addEventListener("change",render);
+document.getElementById("type").addEventListener("change",render);
 document.querySelectorAll(".category-card").forEach(b=>b.addEventListener("click",()=>{document.getElementById("dept").value=b.dataset.dept;document.getElementById("type").value="All";render();document.getElementById("shop").scrollIntoView();}));
 document.getElementById("searchJump").onclick=()=>{document.getElementById("shop").scrollIntoView();document.getElementById("search").focus()};
-document.getElementById("openCart").onclick=()=>document.getElementById("backdrop").style.display="block";document.getElementById("closeCart").onclick=()=>document.getElementById("backdrop").style.display="none";document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")e.currentTarget.style.display="none"});
-document.getElementById("year").textContent=new Date().getFullYear();render();renderCart();
+document.getElementById("openCart").onclick=()=>document.getElementById("backdrop").style.display="block";
+document.getElementById("closeCart").onclick=()=>document.getElementById("backdrop").style.display="none";
+document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")e.currentTarget.style.display="none"});
+document.getElementById("year").textContent=new Date().getFullYear();
+render();renderCart();
 </script>
 </body>
 </html>
