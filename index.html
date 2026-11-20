@@ -85,9 +85,9 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 <section class="section" id="shop">
 <div class="section-head"><div class="eyebrow">The collection</div><h2>Shop all</h2><div class="sub">Use arrows to switch photos, tap photo to zoom, and choose a size.</div></div>
 <div class="toolbar">
-<input class="search" id="search" type="search" placeholder="Search shirts, jeans, kidswear...">
+<input class="search" id="search" type="search" placeholder="Search shirts, jackets, jeans, kidswear...">
 <select class="filter" id="dept"><option value="All">All departments</option><option>Men's Wear</option><option>Kids Wear</option></select>
-<select class="filter" id="type"><option value="All">All product types</option><option>Shirts</option><option>T-Shirts</option><option>Jeans</option><option>Trousers</option><option>Sets</option><option>Shorts</option></select>
+<select class="filter" id="type"><option value="All">All product types</option><option>Shirts</option><option>Jackets</option><option>T-Shirts</option><option>Jeans</option><option>Trousers</option><option>Sets</option><option>Shorts</option></select>
 </div>
 <div class="products" id="products"></div>
 </section>
@@ -112,12 +112,13 @@ footer{border-top:1px solid var(--line);padding:38px 5%;text-align:center;color:
 const WHATSAPP_NUMBER = "919999999999";
 
 const products=[
-  
+  {id:1,name:"Zara Jeans",dept:"Men's Wear",type:"Jeans",price:599,sizes:["28"],images:["Jeans1.JPG"],tag:"Men"},
   {id:2,name:"Eleven Check Casual Shirt",dept:"Men's Wear",type:"Shirts",mrp:1249,price:999,sizes:["L"],images:["Shirt1.jpg","Shirt2.jpg","Shirt3.jpg"],tag:"Eleven"},
-  {id:3,name:"Essential Cotton T-Shirt",dept:"Men's Wear",type:"T-Shirts",price:499,sizes:["S","M","L","XL"],images:["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85"],tag:"Men"},
-  {id:4,name:"Smart Casual Trousers",dept:"Men's Wear",type:"Trousers",price:1099,sizes:["30","32","34","36"],images:["https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85"],tag:"Men"},
-  {id:5,name:"Kids Casual T-Shirt",dept:"Kids Wear",type:"T-Shirts",price:299,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],images:["https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85"],tag:"Kids"},
-  {id:6,name:"Kids Everyday Set",dept:"Kids Wear",type:"Sets",price:599,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],images:["https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85"],tag:"Kids"}
+  {id:3,name:"Premium Shiner Leather Jacket",dept:"Men's Wear",type:"Jackets",mrp:2199,price:1319,sizes:["L"],images:["Shiner-leather-jacket1.jpg","Shiner-leather-jacket2.jpg","Shiner-leather-jacket 3.jpg","Shiner-leather-jacket4.jpg"],tag:"40% OFF"},
+  {id:4,name:"Essential Cotton T-Shirt",dept:"Men's Wear",type:"T-Shirts",price:499,sizes:["S","M","L","XL"],images:["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85"],tag:"Men"},
+  {id:5,name:"Smart Casual Trousers",dept:"Men's Wear",type:"Trousers",price:1099,sizes:["30","32","34","36"],images:["https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85"],tag:"Men"},
+  {id:6,name:"Kids Casual T-Shirt",dept:"Kids Wear",type:"T-Shirts",price:299,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],images:["https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85"],tag:"Kids"},
+  {id:7,name:"Kids Everyday Set",dept:"Kids Wear",type:"Sets",price:599,sizes:["2-3Y","4-5Y","6-7Y","8-9Y"],images:["https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85"],tag:"Kids"}
 ];
 
 let cart=[];
@@ -125,6 +126,20 @@ const slideIndex={};
 let lbProduct=null, lbIndex=0;
 const money=n=>"₹"+n.toLocaleString("en-IN");
 const productBox=document.getElementById("products");
+
+function fixExt(img){
+  const src=img.getAttribute("src");
+  const exts=[".jpg",".jpeg",".JPG",".JPEG",".png",".PNG"];
+  const dot=src.lastIndexOf(".");
+  if(dot===-1) return;
+  const base=src.slice(0,dot), cur=src.slice(dot);
+  const nextIdx=exts.indexOf(cur)+1;
+  if(nextIdx>0 && nextIdx<exts.length){
+    img.src=base+exts[nextIdx];
+  } else {
+    img.onerror=null;
+  }
+}
 
 function goSlide(id, dir, e){
   if(e) e.stopPropagation();
@@ -153,7 +168,9 @@ function closeZoom(){
 
 function updateLightbox(){
   if(!lbProduct) return;
-  document.getElementById("lightboxImg").src=lbProduct.images[lbIndex];
+  const img=document.getElementById("lightboxImg");
+  img.onerror=()=>fixExt(img);
+  img.src=lbProduct.images[lbIndex];
   const multi=lbProduct.images.length>1;
   document.getElementById("lbPrev").style.display=multi?"flex":"none";
   document.getElementById("lbNext").style.display=multi?"flex":"none";
@@ -176,7 +193,7 @@ function render(){
     return `<article class="product">
       <div class="photo" onclick="openZoom(${p.id})">
         <div class="slider" id="slider-${p.id}" style="transform:translateX(-${cur*100}%)">
-          ${p.images.map(src=>`<img src="${src}" alt="${p.name}" loading="lazy">`).join("")}
+          ${p.images.map(src=>`<img src="${src}" onerror="fixExt(this)" alt="${p.name}" loading="lazy">`).join("")}
         </div>
         <span class="tag">${p.tag}</span>
         <button type="button" class="zoom-btn" onclick="event.stopPropagation();openZoom(${p.id})">ZOOM</button>
